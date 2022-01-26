@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: hello-k8s
-    self-cleanup: d97d3c
+    self-cleanup: "554446"
   name: hello-somedeployment1-deployment-c8b2491d
 spec:
   selector:
@@ -27,7 +27,7 @@ kind: Deployment
 metadata:
   labels:
     app: hello-k8s
-    self-cleanup: d97d3c
+    self-cleanup: "554446"
   name: hello-somedeployment2-deployment-c8ba48b8
 spec:
   selector:
@@ -51,7 +51,7 @@ kind: Deployment
 metadata:
   labels:
     app: hello-k8s
-    self-cleanup: d97d3c
+    self-cleanup: "554446"
   name: hello-somedeployment3-deployment-c8eb85c1
 spec:
   selector:
@@ -73,25 +73,25 @@ spec:
 apiVersion: v1
 kind: ConfigMap
 data:
-  script.sh: kubectl delete all -l self-cleanup!=d97d3c || true
+  script.sh: kubectl delete all -l self-cleanup!=554446 || true
 metadata:
   labels:
-    self-cleanup: d97d3c
-  name: self-cleanup-d97d3c
+    self-cleanup: "554446"
+  name: self-cleanup-554446
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   labels:
-    self-cleanup: d97d3c
-  name: self-cleanup-d97d3c
+    self-cleanup: "554446"
+  name: self-cleanup-554446
 ---
 apiVersion: batch/v1
 kind: Job
 metadata:
   labels:
-    self-cleanup: d97d3c
-  name: self-cleanup-d97d3c
+    self-cleanup: "554446"
+  name: self-cleanup-554446
 spec:
   template:
     spec:
@@ -106,17 +106,17 @@ spec:
             - mountPath: /scripts
               name: scripts
       restartPolicy: OnFailure
-      serviceAccount: self-cleanup-d97d3c
+      serviceAccount: self-cleanup-554446
       volumes:
         - configMap:
-            name: self-cleanup-d97d3c
+            name: self-cleanup-554446
           name: scripts
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   labels:
-    self-cleanup: d97d3c
+    self-cleanup: "554446"
   name: hello-selfcleanup-jobrole-c8268e6c
 rules:
   - apiGroups:
@@ -131,7 +131,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   labels:
-    self-cleanup: d97d3c
+    self-cleanup: "554446"
   name: hello-selfcleanup-jobrolebinding-c8d5b9b8
 roleRef:
   apiGroup: ""
@@ -140,4 +140,4 @@ roleRef:
 subjects:
   - apiGroup: ""
     kind: ServiceAccount
-    name: self-cleanup-d97d3c
+    name: self-cleanup-554446
