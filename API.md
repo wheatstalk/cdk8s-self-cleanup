@@ -4,6 +4,10 @@
 
 ### SelfCleanup <a name="SelfCleanup" id="@wheatstalk/cdk8s-self-cleanup.SelfCleanup"></a>
 
+Adds self-cleanup to the chart.
+
+SelfCleanup calculates a hash based on the types and names of all ApiResources that it can find in the chart, then creates a job to delete all labelled resources that don't match the current label hash.
+
 #### Initializers <a name="Initializers" id="@wheatstalk/cdk8s-self-cleanup.SelfCleanup.Initializer"></a>
 
 ```typescript

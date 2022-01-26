@@ -4,6 +4,14 @@ import { Construct, ConstructOrder, IConstruct } from 'constructs';
 import * as k8s from './imports/k8s';
 import { ScriptJob } from './script-job';
 
+/**
+ * Adds self-cleanup to the chart.
+ *
+ * SelfCleanup calculates a hash based on the types and names of all
+ * ApiResources that it can find in the chart, then creates a job to
+ * delete all labelled resources that don't match the current label
+ * hash.
+ */
 export class SelfCleanup extends Construct {
   constructor(scope: Construct, id: string) {
     super(scope, id);
@@ -25,7 +33,6 @@ export class SelfCleanup extends Construct {
       [labelName]: labelHash,
     };
 
-    // @ts-ignore
     const selfCleanupScript = new ScriptJob(this, 'SelfCleanupScript', {
       metadata: {
         name: `self-cleanup-${labelHash}`,

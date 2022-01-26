@@ -1,6 +1,11 @@
 import { Construct } from 'constructs';
 import * as k8s from './imports/k8s';
 
+/**
+ * Used for testing.
+ *
+ * @internal
+ */
 export class SomeDeployment extends Construct {
   constructor(scope: Construct, id: string) {
     super(scope, id);
