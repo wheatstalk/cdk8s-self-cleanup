@@ -63,7 +63,7 @@ describe('createApiObjectHash', () => {
 });
 
 describe('SelfCleanup', () => {
-  test('resources without labels', () => {
+  test('resources with labels', () => {
     const app = new App();
     const chart = new Chart(app, 'Chart');
     const apiObject = new ApiObject(chart, 'Something', {
@@ -97,5 +97,22 @@ describe('SelfCleanup', () => {
 
     // THEN
     expect(apiObject.metadata.getLabel('self-cleanup')).toBeDefined();
+  });
+
+  test('specifing the label name', () => {
+    const app = new App();
+    const chart = new Chart(app, 'Chart');
+    const apiObject = new ApiObject(chart, 'Something', {
+      apiVersion: 'some',
+      kind: 'something',
+    });
+
+    // WHEN
+    new SelfCleanup(chart, 'SelfCleanup', {
+      labelName: 'my-custom-label',
+    });
+
+    // THEN
+    expect(apiObject.metadata.getLabel('my-custom-label')).toBeDefined();
   });
 });

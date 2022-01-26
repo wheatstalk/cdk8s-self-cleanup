@@ -5,6 +5,18 @@ import * as k8s from './imports/k8s';
 import { ScriptJob } from './script-job';
 
 /**
+ * Props for SelfCleanup.
+ */
+export interface SelfCleanupProps {
+  /**
+   * Name of the self-cleanup label.
+   *
+   * @default 'self-cleanup'
+   */
+  readonly labelName?: string;
+}
+
+/**
  * Adds self-cleanup to the chart.
  *
  * SelfCleanup calculates a hash based on the types and names of all
@@ -13,10 +25,11 @@ import { ScriptJob } from './script-job';
  * hash.
  */
 export class SelfCleanup extends Construct {
-  constructor(scope: Construct, id: string) {
+  constructor(scope: Construct, id: string, props: SelfCleanupProps = {}) {
     super(scope, id);
 
-    const labelName = 'self-cleanup';
+    const labelName = props.labelName ?? 'self-cleanup';
+
     const chart = Chart.of(this);
     const allNodes = chart.node.findAll(ConstructOrder.POSTORDER);
     const labelHash = createApiObjectHash(allNodes);
