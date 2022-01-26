@@ -1,6 +1,6 @@
 import * as cdk8s from 'cdk8s';
 import { Construct } from 'constructs';
-import { SelfCleanup } from '../src/self-cleanup';
+import { SelfCleanup } from '../src';
 import { SomeDeployment } from '../src/some-deployment';
 
 export class MyChart extends cdk8s.Chart {
