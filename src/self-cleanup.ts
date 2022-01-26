@@ -36,7 +36,7 @@ export class SelfCleanup extends Construct {
         name: `self-cleanup-${labelHash}`,
         labels,
       },
-      script: `kubectl delete all -l ${labelName},${labelName}!=${labelHash} || true`,
+      script: `kubectl delete $(kubectl api-resources --verbs=list --namespaced -o name | paste -s -d,) -l ${labelName},${labelName}!=${labelHash} || true`,
     });
 
     const role = new k8s.KubeRole(this, 'JobRole', {

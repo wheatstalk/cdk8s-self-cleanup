@@ -73,7 +73,7 @@ spec:
 apiVersion: v1
 kind: ConfigMap
 data:
-  script.sh: kubectl delete all -l self-cleanup,self-cleanup!=554446 || true
+  script.sh: kubectl delete $(kubectl api-resources --verbs=list --namespaced -o name | paste -s -d,) -l self-cleanup,self-cleanup!=554446 || true
 metadata:
   labels:
     self-cleanup: "554446"
