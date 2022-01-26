@@ -73,7 +73,7 @@ spec:
 apiVersion: v1
 kind: ConfigMap
 data:
-  script.sh: kubectl delete all -l self-cleanup!=554446 || true
+  script.sh: kubectl delete all -l self-cleanup,self-cleanup!=554446 || true
 metadata:
   labels:
     self-cleanup: "554446"

@@ -38,7 +38,7 @@ export class SelfCleanup extends Construct {
         name: `self-cleanup-${labelHash}`,
         labels,
       },
-      script: `kubectl delete all -l ${labelName}!=${labelHash} || true`,
+      script: `kubectl delete all -l ${labelName},${labelName}!=${labelHash} || true`,
     });
 
     // @ts-ignore
