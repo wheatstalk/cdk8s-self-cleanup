@@ -4,6 +4,7 @@ const project = new cdk8s.ConstructLibraryCdk8s({
   name: '@wheatstalk/cdk8s-self-cleanup',
   author: 'Josh Kellendonk',
   repository: 'https://github.com/wheatstalk/cdk8s-self-cleanup',
+  description: 'Adds self-cleaning for old resources to your CDK8S charts',
   defaultReleaseBranch: 'main',
 
   npmAccess: javascript.NpmAccess.PUBLIC,
