@@ -1,5 +1,6 @@
 {
   "name": "@wheatstalk/cdk8s-self-cleanup",
+  "description": "Adds self-cleaning for old resources to your CDK8S charts",
   "repository": {
     "type": "git",
     "url": "https://github.com/wheatstalk/cdk8s-self-cleanup"
