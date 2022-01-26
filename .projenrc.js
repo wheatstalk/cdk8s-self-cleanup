@@ -8,7 +8,7 @@ const project = new cdk8s.ConstructLibraryCdk8s({
   defaultReleaseBranch: 'main',
 
   npmAccess: javascript.NpmAccess.PUBLIC,
-  cdk8sVersion: '2.1.0',
+  cdk8sVersion: '2.0.0',
   constructsVersion: '10.0.0',
 
   depsUpgradeOptions: {

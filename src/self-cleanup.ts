@@ -1,5 +1,5 @@
 import * as crypto from 'crypto';
-import { ApiObject, Chart, JsonPatch } from 'cdk8s';
+import { ApiObject, Chart } from 'cdk8s';
 import { Construct, ConstructOrder, IConstruct } from 'constructs';
 import * as k8s from './imports/k8s';
 import { ScriptJob } from './script-job';
@@ -23,9 +23,7 @@ export class SelfCleanup extends Construct {
 
     for (const node of allNodes) {
       if (node instanceof ApiObject) {
-        node.addJsonPatch(
-          JsonPatch.add(`/metadata/labels/${labelName}`, labelHash),
-        );
+        node.metadata.addLabel(labelName, labelHash);
       }
     }
 
@@ -41,7 +39,6 @@ export class SelfCleanup extends Construct {
       script: `kubectl delete all -l ${labelName},${labelName}!=${labelHash} || true`,
     });
 
-    // @ts-ignore
     const role = new k8s.KubeRole(this, 'JobRole', {
       metadata: { labels },
       rules: [

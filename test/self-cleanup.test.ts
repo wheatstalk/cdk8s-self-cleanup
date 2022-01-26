@@ -1,5 +1,5 @@
-import { App, Chart } from 'cdk8s';
-import { createApiObjectHash } from '../src';
+import { ApiObject, App, Chart } from 'cdk8s';
+import { createApiObjectHash, SelfCleanup } from '../src';
 import { SomeDeployment } from '../src/some-deployment';
 
 describe('createApiObjectHash', () => {
@@ -59,5 +59,43 @@ describe('createApiObjectHash', () => {
 
     // THEN
     expect(hash1).not.toEqual(hash2);
+  });
+});
+
+describe('SelfCleanup', () => {
+  test('resources without labels', () => {
+    const app = new App();
+    const chart = new Chart(app, 'Chart');
+    const apiObject = new ApiObject(chart, 'Something', {
+      apiVersion: 'some',
+      kind: 'something',
+      metadata: {
+        labels: {
+          test: 'bat',
+        },
+      },
+    });
+
+    // WHEN
+    new SelfCleanup(chart, 'SelfCleanup');
+
+    // THEN
+    expect(apiObject.metadata.getLabel('test')).toEqual('bat');
+    expect(apiObject.metadata.getLabel('self-cleanup')).toBeDefined();
+  });
+
+  test('resources without labels', () => {
+    const app = new App();
+    const chart = new Chart(app, 'Chart');
+    const apiObject = new ApiObject(chart, 'Something', {
+      apiVersion: 'some',
+      kind: 'something',
+    });
+
+    // WHEN
+    new SelfCleanup(chart, 'SelfCleanup');
+
+    // THEN
+    expect(apiObject.metadata.getLabel('self-cleanup')).toBeDefined();
   });
 });
