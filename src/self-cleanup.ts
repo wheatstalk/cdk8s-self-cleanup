@@ -71,7 +71,8 @@ export class SelfCleanup extends Construct {
   }
 }
 
-function createApiObjectHash(allNodes: IConstruct[]) {
+/** @internal */
+export function createApiObjectHash(allNodes: IConstruct[]) {
   const hashFunc = crypto.createHash('sha256');
   for (const node of allNodes) {
     if (node instanceof ApiObject) {
@@ -79,6 +80,7 @@ function createApiObjectHash(allNodes: IConstruct[]) {
         node.apiGroup,
         node.apiVersion,
         node.kind,
+        node.name,
       ].join('.'));
     }
   }
