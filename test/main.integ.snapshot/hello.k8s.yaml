@@ -1,0 +1,143 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: hello-k8s
+    self-cleanup: d97d3c
+  name: hello-somedeployment1-deployment-c8b2491d
+spec:
+  selector:
+    matchLabels:
+      app: hello-k8s
+  template:
+    metadata:
+      labels:
+        app: hello-k8s
+    spec:
+      containers:
+        - image: nginx:1.14-alpine
+          name: nginx
+          resources:
+            limits:
+              cpu: 0.25
+              memory: 20Mi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: hello-k8s
+    self-cleanup: d97d3c
+  name: hello-somedeployment2-deployment-c8ba48b8
+spec:
+  selector:
+    matchLabels:
+      app: hello-k8s
+  template:
+    metadata:
+      labels:
+        app: hello-k8s
+    spec:
+      containers:
+        - image: nginx:1.14-alpine
+          name: nginx
+          resources:
+            limits:
+              cpu: 0.25
+              memory: 20Mi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: hello-k8s
+    self-cleanup: d97d3c
+  name: hello-somedeployment3-deployment-c8eb85c1
+spec:
+  selector:
+    matchLabels:
+      app: hello-k8s
+  template:
+    metadata:
+      labels:
+        app: hello-k8s
+    spec:
+      containers:
+        - image: nginx:1.14-alpine
+          name: nginx
+          resources:
+            limits:
+              cpu: 0.25
+              memory: 20Mi
+---
+apiVersion: v1
+kind: ConfigMap
+data:
+  script.sh: kubectl delete all -l self-cleanup!=d97d3c || true
+metadata:
+  labels:
+    self-cleanup: d97d3c
+  name: self-cleanup-d97d3c
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    self-cleanup: d97d3c
+  name: self-cleanup-d97d3c
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  labels:
+    self-cleanup: d97d3c
+  name: self-cleanup-d97d3c
+spec:
+  template:
+    spec:
+      containers:
+        - args:
+            - /scripts/script.sh
+          command:
+            - bash
+          image: bitnami/kubectl
+          name: script
+          volumeMounts:
+            - mountPath: /scripts
+              name: scripts
+      restartPolicy: OnFailure
+      serviceAccount: self-cleanup-d97d3c
+      volumes:
+        - configMap:
+            name: self-cleanup-d97d3c
+          name: scripts
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  labels:
+    self-cleanup: d97d3c
+  name: hello-selfcleanup-jobrole-c8268e6c
+rules:
+  - apiGroups:
+      - "*"
+    resources:
+      - "*"
+    verbs:
+      - delete
+      - list
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  labels:
+    self-cleanup: d97d3c
+  name: hello-selfcleanup-jobrolebinding-c8d5b9b8
+roleRef:
+  apiGroup: ""
+  kind: Role
+  name: hello-selfcleanup-jobrole-c8268e6c
+subjects:
+  - apiGroup: ""
+    kind: ServiceAccount
+    name: self-cleanup-d97d3c
