@@ -15,6 +15,7 @@ const project = new cdk8s.ConstructLibraryCdk8s({
     ignoreProjen: false,
   },
 
+  autoApproveUpgrades: true,
   autoApproveOptions: {
     allowedUsernames: ['misterjoshua'],
   },
