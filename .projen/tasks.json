@@ -129,20 +129,6 @@
         }
       ]
     },
-    "integ:main:deploy": {
-      "name": "integ:main:deploy",
-      "steps": [
-        {
-          "exec": "rimraf test/main.integ.snapshot"
-        },
-        {
-          "exec": "cdk8s synth --app \"ts-node -P tsconfig.dev.json test/main.integ.ts\" --output test/main.integ.snapshot"
-        },
-        {
-          "exec": "kubectl apply -f test/main.integ.snapshot"
-        }
-      ]
-    },
     "package": {
       "name": "package",
       "description": "Creates the distribution package",
