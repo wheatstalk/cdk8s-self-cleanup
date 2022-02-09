@@ -27,11 +27,6 @@ const project = new cdk8s.ConstructLibraryCdk8s({
   ],
 });
 
-const deployTask = project.addTask('integ:main:deploy');
-deployTask.exec('rimraf test/main.integ.snapshot');
-deployTask.exec('cdk8s synth --app "ts-node -P tsconfig.dev.json test/main.integ.ts" --output test/main.integ.snapshot');
-deployTask.exec('kubectl apply -f test/main.integ.snapshot');
-
 project.addGitIgnore('/.idea');
 
 project.synth();
