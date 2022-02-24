@@ -39,12 +39,12 @@
     "organization": false
   },
   "devDependencies": {
-    "@types/jest": "^27.4.0",
+    "@types/jest": "^27.4.1",
     "@types/node": "^12",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
     "cdk8s": "2.0.0",
-    "cdk8s-cli": "^1.0.105",
+    "cdk8s-cli": "^1.0.106",
     "constructs": "10.0.0",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.6",
@@ -57,7 +57,7 @@
     "jsii-docgen": "^5.0.16",
     "json-schema": "^0.4.0",
     "npm-check-updates": "^12",
-    "projen": "^0.52.44",
+    "projen": "^0.52.45",
     "rimraf": "^3.0.2",
     "standard-version": "^9",
     "ts-jest": "^27.1.3",
