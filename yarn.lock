@@ -1533,9 +1533,9 @@ cdk8s@2.0.0:
     yaml "2.0.0-7"
 
 cdk8s@^1.8.37:
-  version "1.8.38"
-  resolved "https://registry.yarnpkg.com/cdk8s/-/cdk8s-1.8.38.tgz#5bbb0087e97ab2f99d8c46dd47ecec661c1d29e0"
-  integrity sha512-IKsH9wZUmBoP/yuhk5zn1IUlqyOqr5H7CsKxYQrA8wTPq/7Cr1702Wi5LzeDecr+IxYmITDYn1QjJgZmTKOBuA==
+  version "1.8.39"
+  resolved "https://registry.yarnpkg.com/cdk8s/-/cdk8s-1.8.39.tgz#5bbd7c70f9dfd865f1b50b56da62434590ca8391"
+  integrity sha512-40iW9WCV6PyypcW869S+qB6cbjQB3mkKOZL19suEagD92lcoM9Ukp+PAFdpDs30pXJ6qG3sBYaJWBrFd83GqdQ==
   dependencies:
     fast-json-patch "^3.1.1"
     follow-redirects "^1.15.2"
@@ -1756,9 +1756,9 @@ constructs@10.0.0:
   integrity sha512-MIwjmrXZpM9RtwyrSD4HotDIQl8HTdIefQhU+MU1asvtSyVN3kK8kjeUOWMFb+fdyT4RX3QvvcaaPBluLEX1SA==
 
 constructs@^3.4.149:
-  version "3.4.150"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.4.150.tgz#32c739448b9488d9f5ea111f91d2ffcccf2e042f"
-  integrity sha512-YdHenLdhGdGcCHP/VWFOH3w26cpiByPdy+DWSkAK6ocZiURLvmC3MpcfJGLvo1NmNoksO8wxD97CGyF8QJCjHg==
+  version "3.4.151"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.4.151.tgz#b983368290625f93b1e66be6a90626021fc74982"
+  integrity sha512-kTWDT0q9JwCZy+8xb/SEPDMVSmRsAimX6mmHa/IpJWmXpfh3xx4RtMYbHtcuENjSQqUC8hhCfNrClsdlDbUj8A==
 
 conventional-changelog-angular@^5.0.12:
   version "5.0.13"
@@ -3991,9 +3991,9 @@ jsii-rosetta@^1.52.1, jsii-rosetta@^1.71.0:
     yargs "^16.2.0"
 
 jsii-srcmak@^0.1.728:
-  version "0.1.729"
-  resolved "https://registry.yarnpkg.com/jsii-srcmak/-/jsii-srcmak-0.1.729.tgz#2b883f9dadeae036cff1bf637c6e24d3f5baaeec"
-  integrity sha512-s/+RXNRChvMDIK1JyKcQAeyDHwFqWPD6fKcONso0O7q1lcEn/jB6NaZTOdgrz66lLuYXegBK/jg6i4TpIG6+Tg==
+  version "0.1.730"
+  resolved "https://registry.yarnpkg.com/jsii-srcmak/-/jsii-srcmak-0.1.730.tgz#be2be519e27efb70915a7146154b687c8874b427"
+  integrity sha512-9t0DCYckukkW09USsFTTe/6OaSrG61b/CXbsbB4LMxGDBF7XqY0oPbCSlNaiaVr9gzFPrRGw53Vw2cEXYyKTHg==
   dependencies:
     fs-extra "^9.1.0"
     jsii "^1.71.0"
@@ -4073,9 +4073,9 @@ json-stringify-safe@^5.0.1:
   integrity sha512-ZClg6AaYvamvYEE82d3Iyd3vSSIjQ+odgjaTzRuO3s7toCdFKczob2i0zCh7JE8kWn17yvAWhUVxvqGwUalsRA==
 
 json2jsii@^0.3.177:
-  version "0.3.178"
-  resolved "https://registry.yarnpkg.com/json2jsii/-/json2jsii-0.3.178.tgz#06e4fc251b0e241b543a0b511e12ad01455347d9"
-  integrity sha512-2CV/0UZwJdKA3VguQP7txVFK5S161COEL4mCp2Nk58yH3scrUPB+aLu7zmVpuXVnahEHRJnm/bywoF8b4yZJsA==
+  version "0.3.179"
+  resolved "https://registry.yarnpkg.com/json2jsii/-/json2jsii-0.3.179.tgz#25c3250b77c4a9804b27b5b54cfc2e969470796e"
+  integrity sha512-/LiIkHH41wGwWnZP9LGBGS/Ec8hKVNo/W5OG1yOaDovYnr2fVIlPiubp9MW8Oxe9uHPTkYFS6Sz25XqI7JTYow==
   dependencies:
     camelcase "^6.3.0"
     json-schema "^0.4.0"
