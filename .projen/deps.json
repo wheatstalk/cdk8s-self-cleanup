@@ -7,17 +7,17 @@
     },
     {
       "name": "@types/node",
-      "version": "^14",
+      "version": "^16",
       "type": "build"
     },
     {
       "name": "@typescript-eslint/eslint-plugin",
-      "version": "^5",
+      "version": "^6",
       "type": "build"
     },
     {
       "name": "@typescript-eslint/parser",
-      "version": "^5",
+      "version": "^6",
       "type": "build"
     },
     {
@@ -25,17 +25,8 @@
       "type": "build"
     },
     {
-      "name": "cdk8s",
-      "version": "2.0.0",
-      "type": "build"
-    },
-    {
       "name": "constructs",
-      "version": "10.0.0",
-      "type": "build"
-    },
-    {
-      "name": "eslint-import-resolver-node",
+      "version": "^10.0.0",
       "type": "build"
     },
     {
@@ -53,16 +44,12 @@
     },
     {
       "name": "jest-junit",
-      "version": "^13",
+      "version": "^15",
       "type": "build"
     },
     {
       "name": "jest",
       "version": "^27",
-      "type": "build"
-    },
-    {
-      "name": "jsii",
       "type": "build"
     },
     {
@@ -78,8 +65,13 @@
       "type": "build"
     },
     {
-      "name": "npm-check-updates",
-      "version": "^16",
+      "name": "jsii-rosetta",
+      "version": "1.x",
+      "type": "build"
+    },
+    {
+      "name": "jsii",
+      "version": "1.x",
       "type": "build"
     },
     {
