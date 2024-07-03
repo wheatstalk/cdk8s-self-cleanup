@@ -1327,21 +1327,21 @@ case@^1.6.3:
   resolved "https://registry.yarnpkg.com/case/-/case-1.6.3.tgz#0a4386e3e9825351ca2e6216c60467ff5f1ea1c9"
   integrity sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==
 
-cdk8s-cli@^1.195.147:
-  version "1.195.147"
-  resolved "https://registry.yarnpkg.com/cdk8s-cli/-/cdk8s-cli-1.195.147.tgz#542a55f386901528150397008d16239b0128aa23"
-  integrity sha512-J7VzhyRUFZWfXGzyvLMY8YDwsV1V+5Za0tor7JotNVfGg5LE3Y7iUv1dU6OU1b+TWP/9IySHYkvDNrvDq+fGsw==
+cdk8s-cli@^1.195.148:
+  version "1.195.148"
+  resolved "https://registry.yarnpkg.com/cdk8s-cli/-/cdk8s-cli-1.195.148.tgz#0c8e70daa8d93cb5b641d61e06482703e9d7538f"
+  integrity sha512-KPknf8roJuObjdwz8c0xecU9hZj5OYzI1S4wgRJkDLEvkHjLTCGa5t4zH/GG9Dx+O5I5+lMIyZ5pc6sWDds5rg==
   dependencies:
     "@types/node" "^16"
     ajv "^8.16.0"
-    cdk8s "^1.63.90"
+    cdk8s "^1.63.91"
     codemaker "^1.101.0"
     colors "1.4.0"
     constructs "^3.4.344"
     fs-extra "^8"
     jsii-pacmak "^1.101.0"
     jsii-rosetta "^5.4.24"
-    jsii-srcmak "^0.1.1169"
+    jsii-srcmak "^0.1.1170"
     json2jsii "^0.4.4"
     semver "^7.6.2"
     sscaff "^1.2.274"
@@ -1358,10 +1358,10 @@ cdk8s@2.0.0:
     follow-redirects "^1.14.6"
     yaml "2.0.0-7"
 
-cdk8s@^1.63.90:
-  version "1.63.91"
-  resolved "https://registry.yarnpkg.com/cdk8s/-/cdk8s-1.63.91.tgz#395d1c94affcb20ee443b68050de8cef78241545"
-  integrity sha512-8B5hUOpw9DwR/X5ZaqGwL2OdcviIcB/rNjVFMrYmnye/j92u7DBI2U5fZYAcv6bKs4BUNCmIORqzjBt4x/iKag==
+cdk8s@^1.63.91:
+  version "1.63.92"
+  resolved "https://registry.yarnpkg.com/cdk8s/-/cdk8s-1.63.92.tgz#612bd051257a74a062c91b5301f8a6e5afc72823"
+  integrity sha512-EOUJl8nzJpjRKf0ax7S1raihoz8bGgOwe85Bh0yrz5LTN1TijfF6fYtcGaKeflBG4wznfWOlaW2UcZ2C/DA+vA==
   dependencies:
     fast-json-patch "^3.1.1"
     follow-redirects "^1.15.6"
@@ -3663,10 +3663,10 @@ jsii-rosetta@^5.4.24:
     workerpool "^6.5.1"
     yargs "^17.7.2"
 
-jsii-srcmak@^0.1.1169:
-  version "0.1.1170"
-  resolved "https://registry.yarnpkg.com/jsii-srcmak/-/jsii-srcmak-0.1.1170.tgz#c312225d49d2011c7e3d5761f4ea4472ce2b6646"
-  integrity sha512-uRSMxgjIA1v9Bk96NAwBIz5/fC05oYVJ2Qug8wVgIy3Q00WFt4kedwkPQE95Bh+pF1V/uS5RON3uqxXlLsBV0w==
+jsii-srcmak@^0.1.1170:
+  version "0.1.1171"
+  resolved "https://registry.yarnpkg.com/jsii-srcmak/-/jsii-srcmak-0.1.1171.tgz#3f9f237ec2b45807d4be2098ac3980d617c914b8"
+  integrity sha512-4AQKk1shmIWYmMhmhw9q/TrMvO2YN/VD9NXIiJ8MA3W45G+28+61iSPObZ0uM7SlBbDkXxRLQCdMS11bFW7gyw==
   dependencies:
     fs-extra "^9.1.0"
     jsii "~5.4.25"
@@ -5320,9 +5320,9 @@ typescript@^4.9.5:
   integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
 
 typescript@next:
-  version "5.6.0-dev.20240701"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.6.0-dev.20240701.tgz#fee76140e3b1c4d37014ffee38c79ba245be938e"
-  integrity sha512-x8jIDJiBfgaT4/vpz3FwNKa2dYQsLZXKWsaCeyQWrXzkbKyirrGdVuOr3nbz0bcvteZNJ2BCZPDlAiwsX/pENw==
+  version "5.6.0-dev.20240702"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.6.0-dev.20240702.tgz#7cc7d517bdecff718710a92594cc5acf7ebe1047"
+  integrity sha512-hbRazJD/2++Y7fBv6NZtCyoMfoVYmuDlGs+jqdWicZfXP6Fp8q9FDFnuvYpKNq1fXwBrGIUXEZlXssvXIWy/FQ==
 
 typescript@~3.9.10:
   version "3.9.10"
@@ -5370,9 +5370,9 @@ universalify@^2.0.0:
   integrity sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==
 
 update-browserslist-db@^1.0.16:
-  version "1.0.16"
-  resolved "https://registry.yarnpkg.com/update-browserslist-db/-/update-browserslist-db-1.0.16.tgz#f6d489ed90fb2f07d67784eb3f53d7891f736356"
-  integrity sha512-KVbTxlBYlckhF5wgfyZXTWnMn7MMZjMu9XG8bPlliUOP9ThaF4QnhP8qrjrH7DRzHfSk0oQv1wToW+iA5GajEQ==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/update-browserslist-db/-/update-browserslist-db-1.1.0.tgz#7ca61c0d8650766090728046e416a8cde682859e"
+  integrity sha512-EdRAaAyk2cUE1wOf2DkEhzxqOQvFOoRJFNS6NeyJ01Gp2beMRpBAINjM2iDXE3KCuKhwnvHIQCJm6ThL2Z+HzQ==
   dependencies:
     escalade "^3.1.2"
     picocolors "^1.0.1"
